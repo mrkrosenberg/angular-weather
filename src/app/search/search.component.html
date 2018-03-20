@@ -1,7 +1,8 @@
 <section>
     <h2>What's the Weather Where You're At?</h2>
-    <input [(ngModel)]="zip" type="text" placeholder="Zip Code Here"/>
-    <input (click)="findWeather(zip)" type="submit" value="Search"/>
+    <input [(ngModel)]="zip" (keyup)="findWeather(zip)" type="text" placeholder="Zip Code Here"/>
+    <!-- don't need this click listener on the submit button, we can put it right in the above input -->
+    <!-- <input (click)="findWeather(zip)" type="submit" value="Search"/> -->
   </section>
 
   <section *ngIf="weather">
